@@ -1,38 +1,77 @@
-.App {
+* {
+  box-sizing: border-box;
+  padding: 0%;
+  margin: 0%;
+}
+.header {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.col {
+  text-align: center;
+  background-color: beige;
+  height: 40px;
+  border: 2px solid white;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.x.col, .o.col {
+  cursor: not-allowed;
+}
+.row {
+  position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.winner {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+}
+#restart {
+  width: 50%;
+  margin: auto;
 }
 
-.App-link {
-  color: #61dafb;
+ 
+
+ .x.col::before,
+ .ex .col:hover:not(.x):not(.o)::before {
+  content: '';
+  position: absolute;
+  background-color: black;
+  height: 30px;
+  width: 5px;
+  transform: rotate(40deg);
+}
+.x.col::after, 
+.ex .col:hover:not(.x):not(.o)::after {
+  content: '';
+  position: absolute;
+  background-color: black;
+  height: 30px;
+  width: 5px;
+  transform: rotate(-40deg);
+}
+.ex .col:hover:not(.x):not(.o)::before,
+.ex .col:hover:not(.x):not(.o)::after {
+  background-color: lightgray;
+}
+.o.col::before,
+.circle .col:hover:not(.x):not(.o)::before {
+  content: '';
+  position: absolute;
+  background-color: black;
+  height: 90%;
+  width: 40px;
+  border-radius: 50%;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+.circle .col:hover:not(.x):not(.o)::before{
+  background-color: lightgray;
 }
+
+
+
+
